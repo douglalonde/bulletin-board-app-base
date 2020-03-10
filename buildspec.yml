@@ -15,6 +15,7 @@ phases:
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - aws cloudformation update-stack --stack-name p1-8 --template-body file:///home/dlalonde/code/ecs-refarch-cloudformation/master.yaml --tags Key=Platform,Value=p1-8 --capabilities CAPABILITY_NAMED_IAM
   post_build:
     commands:
       - echo Build completed on `date`
