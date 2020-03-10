@@ -22,5 +22,5 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - aws cloudformation update-stack --stack-name p1-8 --template-body https://s3.amazonaws.com/ecs-cloudformation-dlalonde-demo2/master.yaml --tags Key=Platform,Value=p1-8 --capabilities CAPABILITY_NAMED_IAM
+      - aws cloudformation update-stack --stack-name p1-8 --template-url https://s3.amazonaws.com/ecs-cloudformation-dlalonde-demo2/master.yaml --tags Key=Platform,Value=p1-8 --capabilities CAPABILITY_NAMED_IAM
      
