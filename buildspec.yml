@@ -18,7 +18,6 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
-      - ./update_website_service.sh QA
         #- docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
         #- echo Built $REPOSITORY_URI:latest and tagged as $REPOSITORY_URI:$IMAGE_TAG
   post_build:
@@ -26,6 +25,8 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
+      - ./update_website_service.sh QA
+
         #- docker push $REPOSITORY_URI:$IMAGE_TAG
         #- echo Build source dir: $CODEBUILD_SRC_DIR
         #- echo ls of build source dir
