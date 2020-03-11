@@ -27,6 +27,6 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
         #- echo Pushed: $REPOSITORY_URI:latest and $REPOSITORY_URI:$IMAGE_TAG
-        #artifacts:
-        #files:
-        #- imageDetail.json
+artifacts:
+  files:
+    - imageDetail.json
