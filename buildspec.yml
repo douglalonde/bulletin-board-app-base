@@ -25,7 +25,7 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
-      - ./update_website_service.sh QA
+        #- ./update_website_service.sh QA
 
         #- docker push $REPOSITORY_URI:$IMAGE_TAG
         #- echo Build source dir: $CODEBUILD_SRC_DIR
